@@ -1,6 +1,6 @@
 # solution to problem 4 homework set 9
 # part a
- trange = linspace(0,20,1000);
+ trange = linspace(0,20,10000);
  
  %% Defining initial conditions
 Thi0 = 0; % m
@@ -28,17 +28,17 @@ end
 [results1] = lsode('sho_ode',R1,trange);
 [results2] = lsode('sho_ode',R2,trange);
 figure(1); clf
-plot(trange,results(:,2),'b-','linewidth',2);
+plot(trange,results(:,1),'b-','linewidth',2);
 hold on
-plot(trange, results1(:,2),'g-','linewidth',2);
+plot(trange, results1(:,1),'g-','linewidth',2);
 hold on
-plot(trange, results2(:,2),'r-','linewidth',2);
+plot(trange, results2(:,1),'r-','linewidth',2);
 xlabel('t (s)')
-ylabel('X(t)')
+ylabel('x(t)')
 set(gca,'fontname','Arial','fontsize',20)
 xlim([trange(1),trange(end)]);
 title("Numerical solution for a dynamics of damped,driven pendulum, gamma = 1.084");
-legend ({"Thi0 = 0", "Thi0 = pi/2","Thi0 = -pi/2"}, "location", "northeast");
+legend ({"Thi0 = 0", "Thi0 = pi/2","Thi0 = -pi/2"}, "location", "best");
 print figure1.pdf    # The extension specifies the format
 %print -djpg figure1  # Will produce "figure1.jpg" file
 

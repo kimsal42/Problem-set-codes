@@ -1,6 +1,6 @@
 # solution to problem 4 homework set 9
 # part b
- trange = linspace(0,6,1000);
+ trange = linspace(0,6,10000);
  
  %% Defining initial conditions
 Thi0 = 0; % m
@@ -28,11 +28,11 @@ end
 [results1] = lsode('sho_ode',R1,trange);
 [results2] = lsode('sho_ode',R2,trange);
 figure(1); clf
-plot(trange,results(:,2),'b-','linewidth',2);
+plot(trange,results(:,1),'b-','linewidth',2);
 hold on
-plot(trange, results1(:,2),'g-','linewidth',2);
+plot(trange, results1(:,1),'g-','linewidth',2);
 hold on
-plot(trange, results2(:,2),'r-','linewidth',2);
+plot(trange, results2(:,1),'r-','linewidth',2);
 xlabel('t (s)')
 ylabel('X(t)')
 set(gca,'fontname','Arial','fontsize',20)

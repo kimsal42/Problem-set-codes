@@ -1,10 +1,10 @@
 # solution to problem 4 homework set 9
 # part c
- trange = linspace(0,10,1000);
+ trange = linspace(0,20,10000);
  
  %% Defining initial conditions
 Thi0 = 0; % m
-dThi0 = 3; % m/s
+dThi0 = 0; % m/s
 R0 = [Thi0;dThi0]; % Initial condition arrayfun
 Thipi = pi/2;
 R1 = [Thipi,dThi0];
@@ -29,11 +29,11 @@ end
 [results2] = lsode('sho_ode',R2,trange);
 
 figure(1); clf
-plot(trange,results(:,2),'b-','linewidth',2);
+plot(trange,results(:,1),'b-','linewidth',2);
 hold on
-plot(trange, results1(:,2),'g-','linewidth',2);
+plot(trange, results1(:,1),'g-','linewidth',2);
 hold on
-plot(trange, results2(:,2),'r-','linewidth',2);
+plot(trange, results2(:,1),'r-','linewidth',2);
 xlabel('t (s)')
 ylabel('X(t)')
 set(gca,'fontname','Arial','fontsize',20)
